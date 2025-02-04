@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
- - name: Singapore
+  - name: Singapore
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -148,8 +148,8 @@ proxy-groups:
       - Indonesian domain
       - Indonesian wildcard
       - Singapore
-      - Singapore domain 
-      - Singapore wildcard 
+      - Singapore domain
+      - Singapore wildcard
       
   - name: IKLAN
     type: select
