@@ -32,51 +32,101 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: AKUN1
+ - name: Singapore
     server: quiz.int.vidio.com
-    port: 80
+    port: 443
     type: vmess
-    uuid: 396415b0-6f7d-4df3-9d50-1a3ff9115b1a
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
     alterId: 0
     cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
-    servername: id2-ray.ipservers.xyz
+    servername: sg-aws001.arenato.rest
     network: ws
     ws-opts:
-      path: /JAGOANSSH/
+      path: /xrayvmess
       headers:
-        Host: id2-ray.ipservers.xyz
+        Host: sg-aws001.arenato.rest
     udp: true
-  - name: AKUN2
+  - name: Singapore domain
     server: quiz.int.vidio.com
     port: 443
-    type: vless
-    uuid: 9cf9a9b0-2e2e-45bd-ac6f-5eaa44e30cfe
+    type: vmess
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
+    alterId: 0
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: id1vless.ipservers.xyz
+    servername: Singapore.hendrasalsa.my.id
     network: ws
     ws-opts:
-      path: /jagoanssh
+      path: /xrayvmess
       headers:
-        Host: id1vless.ipservers.xyz
+        Host: Singapore.hendrasalsa.my.id
     udp: true
-  - name: AKUN3
+  - name: Indonesian
     server: quiz.int.vidio.com
     port: 443
-    type: vless
-    uuid: aae98731-898a-4cd3-8c7f-d09af2387d63
+    type: vmess
+    uuid: 78776bc1-e913-5cfe-b6a3-81b14daf96c1
+    alterId: 0
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: id2vless.ipservers.xyz
+    servername: id-qwords001.beritanect.click
     network: ws
     ws-opts:
-      path: /jagoanssh
+      path: /xrayvmess
       headers:
-        Host: id2vless.ipservers.xyz
+        Host: id-qwords001.beritanect.click
+    udp: true
+  - name: Indonesian domain
+    server: quiz.int.vidio.com
+    port: 443
+    type: vmess
+    uuid: 78776bc1-e913-5cfe-b6a3-81b14daf96c1
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: idn.hendrasalsa.my.id
+    network: ws
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: idn.hendrasalsa.my.id
+    udp: true
+  - name: Singapore wildcard
+    server: quiz.int.vidio.com
+    port: 443
+    type: vmess
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: quiz.int.vidio.com.Sg01.hendrasalsa.my.id
+    network: ws
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: quiz.int.vidio.com.Sg01.hendrasalsa.my.id
+    udp: true
+  - name: Indonesian wildcard
+    server: quiz.int.vidio.com
+    port: 443
+    type: vmess
+    uuid: 78776bc1-e913-5cfe-b6a3-81b14daf96c1
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: quiz.int.vidio.com.IDN01.hendrasalsa.my.id
+    network: ws
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: quiz.int.vidio.com.IDN01.hendrasalsa.my.id
     udp: true
 
 proxy-groups:
@@ -85,18 +135,21 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - AKUN1
-      - AKUN2
-      - AKUN3
+      - Indonesian
+      - Indonesian domain
+      - Indonesian wildcard
 
   - name: MIX-X
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - AKUN1
-      - AKUN2
-      - AKUN3
+      - Indonesian
+      - Indonesian domain
+      - Indonesian wildcard
+      - Singapore
+      - Singapore domain 
+      - Singapore wildcard 
       
   - name: IKLAN
     type: select
