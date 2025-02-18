@@ -1,0 +1,156 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: Singapore
+    server: quiz.int.vidio.com
+    port: 443
+    type: vmess
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: sg-aws001.arenato.rest
+    network: ws
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: sg-aws001.arenato.rest
+    udp: true
+  - name: Singapore domain
+    server: quiz.int.vidio.com
+    port: 443
+    type: vmess
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: Singapore.hendrasalsa.my.id
+    network: ws
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: Singapore.hendrasalsa.my.id
+    udp: true
+  - name: Indonesian
+    server: quiz.int.vidio.com
+    port: 443
+    type: vmess
+    uuid: 78776bc1-e913-5cfe-b6a3-81b14daf96c1
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id-qwords001.beritanect.click
+    network: ws
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: id-qwords001.beritanect.click
+    udp: true
+  - name: Indonesian domain
+    server: quiz.int.vidio.com
+    port: 443
+    type: vmess
+    uuid: 78776bc1-e913-5cfe-b6a3-81b14daf96c1
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: idn.hendrasalsa.my.id
+    network: ws
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: idn.hendrasalsa.my.id
+    udp: true
+  - name: Singapore wildcard
+    server: quiz.int.vidio.com
+    port: 443
+    type: vmess
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: quiz.int.vidio.com.Sg01.hendrasalsa.my.id
+    network: ws
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: quiz.int.vidio.com.Sg01.hendrasalsa.my.id
+    udp: true
+  - name: Indonesian wildcard
+    server: quiz.int.vidio.com
+    port: 443
+    type: vmess
+    uuid: 78776bc1-e913-5cfe-b6a3-81b14daf96c1
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: quiz.int.vidio.com.IDN01.hendrasalsa.my.id
+    network: ws
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: quiz.int.vidio.com.IDN01.hendrasalsa.my.id
+    udp: true
+proxy-groups:
+  - name: FASTSSH-SSHKIT-HOWDY
+    type: select
+    proxies:
+      - Singapore
+      - Singapore domain
+      - Indonesian
+      - Indonesian domain
+      - Singapore wildcard
+      - Indonesian wildcard
+      - BEST-PING
+      - DIRECT
+  - name: BEST-PING
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - Singapore
+      - Singapore domain
+      - Indonesian
+      - Indonesian domain
+      - Singapore wildcard
+      - Indonesian wildcard
+rules:
+  - MATCH,FASTSSH-SSHKIT-HOWDY
