@@ -166,7 +166,7 @@ proxies:
       headers:
         Host: Sgdo02.hendrasalsa.my.id
     udp: true
-- name: 🇮🇩 Uninet domain
+  - name: 🇮🇩 Uninet domain
     server: quiz.int.vidio.com
     port: 443
     type: trojan
