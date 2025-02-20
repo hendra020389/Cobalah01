@@ -166,6 +166,19 @@ proxies:
       headers:
         Host: Sgdo02.hendrasalsa.my.id
     udp: true
+- name: 🇮🇩 Uninet domain
+    server: quiz.int.vidio.com
+    port: 443
+    type: trojan
+    password: Oke020389
+    skip-cert-verify: true
+    sni: Uninet.hendrasalsa.my.id
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: Uninet.hendrasalsa.my.id
+    udp: true
 proxy-groups:
   - name: VPN
     type: select
@@ -179,6 +192,7 @@ proxy-groups:
       - 🇸🇬 sgdo
       - 🇮🇩 Uninet
       - 🇸🇬 sgdo domain
+      - 🇮🇩 Uninet domain
       - BEST-PING
       - DIRECT
   - name: BEST-PING
@@ -196,6 +210,7 @@ proxy-groups:
       - 🇸🇬 sgdo
       - 🇮🇩 Uninet
       - 🇸🇬 sgdo domain
+      - 🇮🇩 Uninet domain
   - name: DOMAIN
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -205,6 +220,7 @@ proxy-groups:
       - 🇸🇬 Amazon domain
       - 🇮🇩 Raja Mitra domain
       - 🇸🇬 sgdo domain
+      - 🇮🇩 Uninet domain
   - name: WILDCARD
     type: url-test
     url: http://www.gstatic.com/generate_204
