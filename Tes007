@@ -179,6 +179,19 @@ proxies:
       headers:
         Host: Uninet.hendrasalsa.my.id
     udp: true
+  - name: 🇮🇩 jagoanssh
+    server: quiz.int.vidio.com
+    port: 443
+    type: trojan
+    password: jagoanssh-siddiq01
+    skip-cert-verify: true
+    sni: id1go.ipservers.xyz
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: id1go.ipservers.xyz
+    udp: true
 proxy-groups:
   - name: VPN
     type: select
@@ -193,6 +206,7 @@ proxy-groups:
       - 🇮🇩 Uninet
       - 🇸🇬 datacamp domain
       - 🇮🇩 Uninet domain
+      - 🇮🇩 jagoanssh
       - BEST-PING
       - DIRECT
   - name: BEST-PING
@@ -211,6 +225,7 @@ proxy-groups:
       - 🇮🇩 Uninet
       - 🇸🇬 datacamp domain
       - 🇮🇩 Uninet domain
+      - 🇮🇩 jagoanssh
   
 rules:
   - MATCH,VPN
