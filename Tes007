@@ -31,7 +31,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: ðŸ‡¸ðŸ‡¬ Amazon 
+  - name: 🇸🇬 Amazon 
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -47,7 +47,7 @@ proxies:
       headers:
         Host: sg-aws001.arenato.rest
     udp: true
-  - name: ðŸ‡¸ðŸ‡¬ Amazon domain
+  - name: 🇸🇬 Amazon domain
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -63,7 +63,7 @@ proxies:
       headers:
         Host: amazon.hendrasalsa.my.id
     udp: true
-  - name: ðŸ‡®ðŸ‡© Raja Mitra
+  - name: 🇮🇩 Raja Mitra
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -79,7 +79,7 @@ proxies:
       headers:
         Host: id-qwords001.beritanect.click
     udp: true
-  - name: ðŸ‡®ðŸ‡© Raja Mitra domain
+  - name: 🇮🇩 Raja Mitra domain
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -95,7 +95,7 @@ proxies:
       headers:
         Host: idn.hendrasalsa.my.id
     udp: true
-  - name: ðŸ‡¸ðŸ‡¬ Amazon wildcard
+  - name: 🇸🇬 Amazon wildcard
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -111,7 +111,7 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.Sg01.hendrasalsa.my.id
     udp: true
-  - name: ðŸ‡®ðŸ‡© Raja Mitra wildcard
+  - name: 🇮🇩 Raja Mitra wildcard
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -127,7 +127,7 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.IDN01.hendrasalsa.my.id
     udp: true
-  - name: ðŸ‡¸ðŸ‡¬ sgdo
+  - name: 🇸🇬 sgdo
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -140,7 +140,7 @@ proxies:
       headers:
         Host: tro-sgdo002.tunggure.buzz
     udp: true
-  - name: ðŸ‡®ðŸ‡© Industri Kreatif Digital
+  - name: 🇮🇩 Industri Kreatif Digital
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -153,7 +153,7 @@ proxies:
       headers:
         Host: id-ikd001.kegiatanja.my.id
     udp: true
-  - name: ðŸ‡¸ðŸ‡¬ sgdo domain
+  - name: 🇸🇬 sgdo domain
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -170,15 +170,15 @@ proxy-groups:
   - name: VPN
     type: select
     proxies:
-      - ðŸ‡¸ðŸ‡¬ Amazon
-      - ðŸ‡¸ðŸ‡¬ Amazon domain
-      - ðŸ‡®ðŸ‡© Raja Mitra
-      - ðŸ‡®ðŸ‡© Raja Mitra domain
-      - ðŸ‡¸ðŸ‡¬ Amazon wildcard
-      - ðŸ‡®ðŸ‡© Raja Mitra wildcard
-      - ðŸ‡¸ðŸ‡¬ sgdo
-      - ðŸ‡®ðŸ‡© Industri Kreatif Digital
-      - ðŸ‡¸ðŸ‡¬ sgdo domain
+      - 🇸🇬 Amazon
+      - 🇸🇬 Amazon domain
+      - 🇮🇩 Raja Mitra
+      - 🇮🇩 Raja Mitra domain
+      - 🇸🇬 Amazon wildcard
+      - 🇮🇩 Raja Mitra wildcard
+      - 🇸🇬 sgdo
+      - 🇮🇩 Industri Kreatif Digital
+      - 🇸🇬 sgdo domain
       - BEST-PING
       - DIRECT
   - name: BEST-PING
@@ -187,32 +187,32 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - ðŸ‡¸ðŸ‡¬ Amazon
-      - ðŸ‡¸ðŸ‡¬ Amazon domain
-      - ðŸ‡®ðŸ‡© Raja Mitra
-      - ðŸ‡®ðŸ‡© Raja Mitra domain
-      - ðŸ‡¸ðŸ‡¬ Amazon wildcard
-      - ðŸ‡®ðŸ‡© Raja Mitra wildcard
-      - ðŸ‡¸ðŸ‡¬ sgdo
-      - ðŸ‡®ðŸ‡© Industri Kreatif Digital
-      - ðŸ‡¸ðŸ‡¬ sgdo domain
+      - 🇸🇬 Amazon
+      - 🇸🇬 Amazon domain
+      - 🇮🇩 Raja Mitra
+      - 🇮🇩 Raja Mitra domain
+      - 🇸🇬 Amazon wildcard
+      - 🇮🇩 Raja Mitra wildcard
+      - 🇸🇬 sgdo
+      - 🇮🇩 Industri Kreatif Digital
+      - 🇸🇬 sgdo domain
   - name: DOMAIN
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - ðŸ‡¸ðŸ‡¬ Amazon domain
-      - ðŸ‡®ðŸ‡© Raja Mitra domain
-      - ðŸ‡¸ðŸ‡¬ sgdo domain
+      - 🇸🇬 Amazon domain
+      - 🇮🇩 Raja Mitra domain
+      - 🇸🇬 sgdo domain
   - name: WILDCARD
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-     - ðŸ‡¸ðŸ‡¬ Amazon wildcard
-     - ðŸ‡®ðŸ‡© Raja Mitra wildcard
+     - 🇸🇬 Amazon wildcard
+     - 🇮🇩 Raja Mitra wildcard
 
 rules:
   - MATCH,VPN
