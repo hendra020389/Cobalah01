@@ -211,24 +211,6 @@ proxy-groups:
       - 🇮🇩 Uninet
       - 🇸🇬 sgdo domain
       - 🇮🇩 Uninet domain
-  - name: DOMAIN
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-      - 🇸🇬 Amazon domain
-      - 🇮🇩 Raja Mitra domain
-      - 🇸🇬 sgdo domain
-      - 🇮🇩 Uninet domain
-  - name: WILDCARD
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-     - 🇸🇬 Amazon wildcard
-     - 🇮🇩 Raja Mitra wildcard
-
+  
 rules:
   - MATCH,VPN
