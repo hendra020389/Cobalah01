@@ -127,18 +127,18 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.IDN01.hendrasalsa.my.id
     udp: true
-  - name: 🇸🇬 sgdo
+  - name: 🇸🇬 datacamp
     server: quiz.int.vidio.com
     port: 443
     type: trojan
     password: Mantap020389
     skip-cert-verify: true
-    sni: tro-sgdo002.tunggure.buzz
+    sni: sg-datacamp001.arenato.rest
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: tro-sgdo002.tunggure.buzz
+        Host: sg-datacamp001.arenato.rest
     udp: true
   - name: 🇮🇩 Uninet
     server: quiz.int.vidio.com
@@ -153,18 +153,18 @@ proxies:
       headers:
         Host: id-uninet001.beritanect.click
     udp: true
-  - name: 🇸🇬 sgdo domain
+  - name: 🇸🇬 datacamp domain
     server: quiz.int.vidio.com
     port: 443
     type: trojan
     password: Mantap020389
     skip-cert-verify: true
-    sni: Sgdo02.hendrasalsa.my.id
+    sni: datacamp.hendrasalsa.my.id
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: Sgdo02.hendrasalsa.my.id
+        Host: datacamp.hendrasalsa.my.id
     udp: true
   - name: 🇮🇩 Uninet domain
     server: quiz.int.vidio.com
@@ -189,9 +189,9 @@ proxy-groups:
       - 🇮🇩 Raja Mitra domain
       - 🇸🇬 Amazon wildcard
       - 🇮🇩 Raja Mitra wildcard
-      - 🇸🇬 sgdo
+      - 🇸🇬 datacamp
       - 🇮🇩 Uninet
-      - 🇸🇬 sgdo domain
+      - 🇸🇬 datacamp domain
       - 🇮🇩 Uninet domain
       - BEST-PING
       - DIRECT
@@ -207,9 +207,9 @@ proxy-groups:
       - 🇮🇩 Raja Mitra domain
       - 🇸🇬 Amazon wildcard
       - 🇮🇩 Raja Mitra wildcard
-      - 🇸🇬 sgdo
+      - 🇸🇬 datacamp
       - 🇮🇩 Uninet
-      - 🇸🇬 sgdo domain
+      - 🇸🇬 datacamp domain
       - 🇮🇩 Uninet domain
   
 rules:
