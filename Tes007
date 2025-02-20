@@ -140,18 +140,18 @@ proxies:
       headers:
         Host: tro-sgdo002.tunggure.buzz
     udp: true
-  - name: 🇮🇩 Industri Kreatif Digital
+  - name: 🇮🇩 Uninet
     server: quiz.int.vidio.com
     port: 443
     type: trojan
     password: Oke020389
     skip-cert-verify: true
-    sni: id-ikd001.kegiatanja.my.id
+    sni: id-uninet001.beritanect.click
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: id-ikd001.kegiatanja.my.id
+        Host: id-uninet001.beritanect.click
     udp: true
   - name: 🇸🇬 sgdo domain
     server: quiz.int.vidio.com
@@ -177,7 +177,7 @@ proxy-groups:
       - 🇸🇬 Amazon wildcard
       - 🇮🇩 Raja Mitra wildcard
       - 🇸🇬 sgdo
-      - 🇮🇩 Industri Kreatif Digital
+      - 🇮🇩 Uninet
       - 🇸🇬 sgdo domain
       - BEST-PING
       - DIRECT
@@ -194,7 +194,7 @@ proxy-groups:
       - 🇸🇬 Amazon wildcard
       - 🇮🇩 Raja Mitra wildcard
       - 🇸🇬 sgdo
-      - 🇮🇩 Industri Kreatif Digital
+      - 🇮🇩 Uninet
       - 🇸🇬 sgdo domain
   - name: DOMAIN
     type: url-test
