@@ -1,4 +1,3 @@
-port: 7890
 socks-port: 7891
 redir-port: 7892
 mixed-port: 7893
@@ -32,7 +31,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: Singapore
+  - name: ðŸ‡¸ðŸ‡¬ Amazon 
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -48,7 +47,7 @@ proxies:
       headers:
         Host: sg-aws001.arenato.rest
     udp: true
-  - name: Singapore domain
+  - name: ðŸ‡¸ðŸ‡¬ Amazon domain
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -57,14 +56,14 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: Singapore.hendrasalsa.my.id
+    servername: amazon.hendrasalsa.my.id
     network: ws
     ws-opts:
       path: /xrayvmess
       headers:
-        Host: Singapore.hendrasalsa.my.id
+        Host: amazon.hendrasalsa.my.id
     udp: true
-  - name: Indonesian
+  - name: ðŸ‡®ðŸ‡© Raja Mitra
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -80,7 +79,7 @@ proxies:
       headers:
         Host: id-qwords001.beritanect.click
     udp: true
-  - name: Indonesian domain
+  - name: ðŸ‡®ðŸ‡© Raja Mitra domain
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -96,7 +95,7 @@ proxies:
       headers:
         Host: idn.hendrasalsa.my.id
     udp: true
-  - name: Singapore wildcard
+  - name: ðŸ‡¸ðŸ‡¬ Amazon wildcard
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -112,7 +111,7 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.Sg01.hendrasalsa.my.id
     udp: true
-  - name: Indonesian wildcard
+  - name: ðŸ‡®ðŸ‡© Raja Mitra wildcard
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -128,16 +127,58 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.IDN01.hendrasalsa.my.id
     udp: true
+  - name: ðŸ‡¸ðŸ‡¬ sgdo
+    server: quiz.int.vidio.com
+    port: 443
+    type: trojan
+    password: Mantap020389
+    skip-cert-verify: true
+    sni: tro-sgdo002.tunggure.buzz
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: tro-sgdo002.tunggure.buzz
+    udp: true
+  - name: ðŸ‡®ðŸ‡© Industri Kreatif Digital
+    server: quiz.int.vidio.com
+    port: 443
+    type: trojan
+    password: Oke020389
+    skip-cert-verify: true
+    sni: id-ikd001.kegiatanja.my.id
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: id-ikd001.kegiatanja.my.id
+    udp: true
+  - name: ðŸ‡¸ðŸ‡¬ sgdo domain
+    server: quiz.int.vidio.com
+    port: 443
+    type: trojan
+    password: Mantap020389
+    skip-cert-verify: true
+    sni: Sgdo02.hendrasalsa.my.id
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: Sgdo02.hendrasalsa.my.id
+    udp: true
 proxy-groups:
-  - name: FASTSSH-SSHKIT-HOWDY
+  - name: VPN
     type: select
     proxies:
-      - Singapore
-      - Singapore domain
-      - Indonesian
-      - Indonesian domain
-      - Singapore wildcard
-      - Indonesian wildcard
+      - ðŸ‡¸ðŸ‡¬ Amazon
+      - ðŸ‡¸ðŸ‡¬ Amazon domain
+      - ðŸ‡®ðŸ‡© Raja Mitra
+      - ðŸ‡®ðŸ‡© Raja Mitra domain
+      - ðŸ‡¸ðŸ‡¬ Amazon wildcard
+      - ðŸ‡®ðŸ‡© Raja Mitra wildcard
+      - ðŸ‡¸ðŸ‡¬ sgdo
+      - ðŸ‡®ðŸ‡© Industri Kreatif Digital
+      - ðŸ‡¸ðŸ‡¬ sgdo domain
       - BEST-PING
       - DIRECT
   - name: BEST-PING
@@ -146,11 +187,32 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - Singapore
-      - Singapore domain
-      - Indonesian
-      - Indonesian domain
-      - Singapore wildcard
-      - Indonesian wildcard
+      - ðŸ‡¸ðŸ‡¬ Amazon
+      - ðŸ‡¸ðŸ‡¬ Amazon domain
+      - ðŸ‡®ðŸ‡© Raja Mitra
+      - ðŸ‡®ðŸ‡© Raja Mitra domain
+      - ðŸ‡¸ðŸ‡¬ Amazon wildcard
+      - ðŸ‡®ðŸ‡© Raja Mitra wildcard
+      - ðŸ‡¸ðŸ‡¬ sgdo
+      - ðŸ‡®ðŸ‡© Industri Kreatif Digital
+      - ðŸ‡¸ðŸ‡¬ sgdo domain
+  - name: DOMAIN
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - ðŸ‡¸ðŸ‡¬ Amazon domain
+      - ðŸ‡®ðŸ‡© Raja Mitra domain
+      - ðŸ‡¸ðŸ‡¬ sgdo domain
+  - name: WILDCARD
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+     - ðŸ‡¸ðŸ‡¬ Amazon wildcard
+     - ðŸ‡®ðŸ‡© Raja Mitra wildcard
+
 rules:
-  - MATCH,FASTSSH-SSHKIT-HOWDY
+  - MATCH,VPN
