@@ -180,7 +180,7 @@ proxies:
         Host: Uninet.hendrasalsa.my.id
     udp: true
 proxy-groups:
-  - name: VPN
+  - name: VPN SERVER
     type: select
     proxies:
       - 🇸🇬 Amazon
@@ -195,7 +195,7 @@ proxy-groups:
       - 🇮🇩 Uninet domain
       - BEST-PING
       - DIRECT
-  - name: BEST-PING
+  - name: BEST-PING 🚀
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -213,4 +213,4 @@ proxy-groups:
       - 🇮🇩 Uninet domain
   
 rules:
-  - MATCH,VPN
+  - MATCH,VPN SERVER
