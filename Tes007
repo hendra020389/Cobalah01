@@ -63,38 +63,6 @@ proxies:
       headers:
         Host: amazon.hendrasalsa.my.id
     udp: true
-  - name: 🇮🇩 Raja Mitra
-    server: quiz.int.vidio.com
-    port: 443
-    type: vmess
-    uuid: 78776bc1-e913-5cfe-b6a3-81b14daf96c1
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: id-qwords001.beritanect.click
-    network: ws
-    ws-opts:
-      path: /xrayvmess
-      headers:
-        Host: id-qwords001.beritanect.click
-    udp: true
-  - name: 🇮🇩 Raja Mitra domain
-    server: quiz.int.vidio.com
-    port: 443
-    type: vmess
-    uuid: 78776bc1-e913-5cfe-b6a3-81b14daf96c1
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: idn.hendrasalsa.my.id
-    network: ws
-    ws-opts:
-      path: /xrayvmess
-      headers:
-        Host: idn.hendrasalsa.my.id
-    udp: true
   - name: 🇸🇬 Amazon wildcard
     server: quiz.int.vidio.com
     port: 443
@@ -182,8 +150,6 @@ proxy-groups:
     proxies:
       - 🇸🇬 Amazon
       - 🇸🇬 Amazon domain
-      - 🇮🇩 Raja Mitra
-      - 🇮🇩 Raja Mitra domain
       - 🇸🇬 Amazon wildcard
       - 🇮🇩 Uninet wildcard
       - 🇸🇬 datacamp
@@ -200,8 +166,6 @@ proxy-groups:
     proxies:
       - 🇸🇬 Amazon
       - 🇸🇬 Amazon domain
-      - 🇮🇩 Raja Mitra
-      - 🇮🇩 Raja Mitra domain
       - 🇸🇬 Amazon wildcard
       - 🇮🇩 Uninet wildcard
       - 🇸🇬 datacamp
