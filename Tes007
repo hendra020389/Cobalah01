@@ -145,17 +145,17 @@ proxies:
         Host: Uninet.hendrasalsa.my.id
     udp: true
 proxy-groups:
-  - name: VPN SERVER
+  - name: VPN SERVER 🌐
     type: select
     proxies:
+      - 🇮🇩 Uninet
+      - 🇮🇩 Uninet domain
+      - 🇮🇩 Uninet wildcard
       - 🇸🇬 Amazon
       - 🇸🇬 Amazon domain
       - 🇸🇬 Amazon wildcard
-      - 🇮🇩 Uninet wildcard
       - 🇸🇬 datacamp
-      - 🇮🇩 Uninet
       - 🇸🇬 datacamp domain
-      - 🇮🇩 Uninet domain
       - BEST-PING 🚀
       - DIRECT
   - name: BEST-PING 🚀
@@ -164,14 +164,14 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
+      - 🇮🇩 Uninet
+      - 🇮🇩 Uninet domain
+      - 🇮🇩 Uninet wildcard
       - 🇸🇬 Amazon
       - 🇸🇬 Amazon domain
       - 🇸🇬 Amazon wildcard
-      - 🇮🇩 Uninet wildcard
       - 🇸🇬 datacamp
-      - 🇮🇩 Uninet
       - 🇸🇬 datacamp domain
-      - 🇮🇩 Uninet domain
   
 rules:
-  - MATCH,VPN SERVER
+  - MATCH,VPN SERVER 🌐
