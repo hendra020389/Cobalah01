@@ -148,9 +148,9 @@ proxy-groups:
   - name: VPN SERVER 🌐
     type: select
     proxies:
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet domain
       - 🇮🇩 Uninet wildcard
+      - 🇮🇩 Uninet domain
+      - 🇮🇩 Uninet
       - 🇸🇬 Amazon
       - 🇸🇬 Amazon domain
       - 🇸🇬 Amazon wildcard
@@ -163,9 +163,9 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet domain
       - 🇮🇩 Uninet wildcard
+      - 🇮🇩 Uninet domain
+      - 🇮🇩 Uninet
       - 🇸🇬 Amazon
       - 🇸🇬 Amazon domain
       - 🇸🇬 Amazon wildcard
