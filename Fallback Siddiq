@@ -161,17 +161,7 @@ proxy-groups:
   - name: VPN SERVER 🌐
     type: select
     proxies:
-      - 🇸🇬 Amazon
-      - 🇸🇬 Amazon domain
-      - 🇸🇬 Amazon wildcard
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet domain
-      - 🇮🇩 Uninet wildcard
-      - 🇸🇬 datacamp
-      - 🇸🇬 datacamp domain
-      - 🇸🇬 datacamp wildcard
       - FALLBACK 🚀
-      - DIRECT
   - name: FALLBACK 🚀
     type: fallback
     url: http://www.gstatic.com/generate_204
