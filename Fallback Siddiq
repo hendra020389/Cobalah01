@@ -144,6 +144,19 @@ proxies:
       headers:
         Host: Uninet.hendrasalsa.my.id
     udp: true
+  - name: 🇸🇬 datacamp wildcard
+    server: quiz.int.vidio.com
+    port: 443
+    type: trojan
+    password: Mantap020389
+    skip-cert-verify: true
+    sni: quiz.int.vidio.com.Sg02.hendrasalsa.my.id
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: quiz.int.vidio.com.Sg02.hendrasalsa.my.id
+    udp: true
 proxy-groups:
   - name: VPN SERVER 🌐
     type: select
@@ -156,6 +169,7 @@ proxy-groups:
       - 🇮🇩 Uninet wildcard
       - 🇸🇬 datacamp
       - 🇸🇬 datacamp domain
+      - 🇸🇬 datacamp wildcard
       - FALLBACK 🚀
       - DIRECT
   - name: FALLBACK 🚀
@@ -171,6 +185,7 @@ proxy-groups:
       - 🇮🇩 Uninet wildcard
       - 🇸🇬 datacamp
       - 🇸🇬 datacamp domain
+      - 🇸🇬 datacamp wildcard
   
 rules:
   - MATCH,VPN SERVER 🌐
