@@ -171,11 +171,27 @@ proxy-groups:
       - 🇸🇬 datacamp domain
       - 🇸🇬 datacamp wildcard
       - FALLBACK 🚀
+      - BEST-PING 🚀
       - DIRECT
   - name: FALLBACK 🚀
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
+    proxies:
+      - 🇮🇩 Uninet wildcard
+      - 🇮🇩 Uninet domain
+      - 🇮🇩 Uninet
+      - 🇸🇬 Amazon
+      - 🇸🇬 Amazon domain
+      - 🇸🇬 Amazon wildcard
+      - 🇸🇬 datacamp
+      - 🇸🇬 datacamp domain
+      - 🇸🇬 datacamp wildcard
+  - name: BEST-PING 🚀
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
     proxies:
       - 🇮🇩 Uninet wildcard
       - 🇮🇩 Uninet domain
