@@ -31,7 +31,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: 🇸🇬 Amazon 
+  - name: Amazon 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -47,7 +47,7 @@ proxies:
       headers:
         Host: sg-aws001.arenato.rest
     udp: true
-  - name: 🇸🇬 Amazon domain
+  - name: Amazon domain 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -63,7 +63,7 @@ proxies:
       headers:
         Host: amazon.hendrasalsa.my.id
     udp: true
-  - name: 🇸🇬 Amazon wildcard
+  - name: Amazon wildcard 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -79,7 +79,7 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.Sg01.hendrasalsa.my.id
     udp: true
-  - name: 🇮🇩 Uninet wildcard
+  - name: Uninet wildcard 🇮🇩
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -92,7 +92,7 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.idn01.hendrasalsa.my.id
     udp: true
-  - name: 🇸🇬 datacamp
+  - name: datacamp 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -105,7 +105,7 @@ proxies:
       headers:
         Host: sg-datacamp001.arenato.rest
     udp: true
-  - name: 🇮🇩 Uninet
+  - name: Uninet 🇮🇩
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -118,7 +118,7 @@ proxies:
       headers:
         Host: id-uninet001.beritanect.click
     udp: true
-  - name: 🇸🇬 datacamp domain
+  - name: datacamp domain 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -131,7 +131,7 @@ proxies:
       headers:
         Host: datacamp.hendrasalsa.my.id
     udp: true
-  - name: 🇮🇩 Uninet domain
+  - name: Uninet domain 🇮🇩
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -144,7 +144,7 @@ proxies:
       headers:
         Host: Uninet.hendrasalsa.my.id
     udp: true
-  - name: 🇸🇬 datacamp wildcard
+  - name: datacamp wildcard 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -161,15 +161,15 @@ proxy-groups:
   - name: VPN SERVER 🌐
     type: select
     proxies:
-      - 🇮🇩 Uninet domain
-      - 🇮🇩 Uninet wildcard
-      - 🇮🇩 Uninet
-      - 🇸🇬 Amazon
-      - 🇸🇬 Amazon domain
-      - 🇸🇬 Amazon wildcard
-      - 🇸🇬 datacamp
-      - 🇸🇬 datacamp domain
-      - 🇸🇬 datacamp wildcard
+      - Uninet domain 🇮🇩
+      - Uninet wildcard 🇮🇩
+      - Uninet 🇮🇩
+      - Amazon 🇸🇬
+      - Amazon domain 🇸🇬
+      - Amazon wildcard 🇸🇬
+      - datacamp 🇸🇬
+      - datacamp domain 🇸🇬
+      - datacamp wildcard 🇸🇬
       - FALLBACK 🚀
       - BEST-PING 🚀
       - LOAD-BALANCE 🚀
@@ -179,45 +179,45 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 🇮🇩 Uninet domain
-      - 🇮🇩 Uninet wildcard
-      - 🇮🇩 Uninet
-      - 🇸🇬 Amazon
-      - 🇸🇬 Amazon domain
-      - 🇸🇬 Amazon wildcard
-      - 🇸🇬 datacamp
-      - 🇸🇬 datacamp domain
-      - 🇸🇬 datacamp wildcard
+      - Uninet domain 🇮🇩
+      - Uninet wildcard 🇮🇩
+      - Uninet 🇮🇩
+      - Amazon 🇸🇬
+      - Amazon domain 🇸🇬
+      - Amazon wildcard 🇸🇬
+      - datacamp 🇸🇬
+      - datacamp domain 🇸🇬
+      - datacamp wildcard 🇸🇬
   - name: BEST-PING 🚀
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - 🇮🇩 Uninet domain
-      - 🇮🇩 Uninet wildcard
-      - 🇮🇩 Uninet
-      - 🇸🇬 Amazon
-      - 🇸🇬 Amazon domain
-      - 🇸🇬 Amazon wildcard
-      - 🇸🇬 datacamp
-      - 🇸🇬 datacamp domain
-      - 🇸🇬 datacamp wildcard
+      - Uninet domain 🇮🇩
+      - Uninet wildcard 🇮🇩
+      - Uninet 🇮🇩
+      - Amazon 🇸🇬
+      - Amazon domain 🇸🇬
+      - Amazon wildcard 🇸🇬
+      - datacamp 🇸🇬
+      - datacamp domain 🇸🇬
+      - datacamp wildcard 🇸🇬
   - name: LOAD-BALANCE 🚀
     type: load-balance
     strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 🇮🇩 Uninet domain
-      - 🇮🇩 Uninet wildcard
-      - 🇮🇩 Uninet
-      - 🇸🇬 Amazon
-      - 🇸🇬 Amazon domain
-      - 🇸🇬 Amazon wildcard
-      - 🇸🇬 datacamp
-      - 🇸🇬 datacamp domain
-      - 🇸🇬 datacamp wildcard
+      - Uninet domain 🇮🇩
+      - Uninet wildcard 🇮🇩
+      - Uninet 🇮🇩
+      - Amazon 🇸🇬
+      - Amazon domain 🇸🇬
+      - Amazon wildcard 🇸🇬
+      - datacamp 🇸🇬
+      - datacamp domain 🇸🇬
+      - datacamp wildcard 🇸🇬
   
 rules:
   - MATCH,VPN SERVER 🌐
