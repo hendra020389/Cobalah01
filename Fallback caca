@@ -168,15 +168,15 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - datacamp 🇸🇬
-      - datacamp domain 🇸🇬
-      - datacamp wildcard 🇸🇬
       - IKD 🇮🇩
       - IKD domain 🇮🇩
       - IKD wildcard 🇮🇩
       - Amazon 🇸🇬
       - Amazon domain 🇸🇬
       - Amazon wildcard 🇸🇬
+      - datacamp 🇸🇬
+      - datacamp domain 🇸🇬
+      - datacamp wildcard 🇸🇬
 rule-providers:
   clash:
     type: http
