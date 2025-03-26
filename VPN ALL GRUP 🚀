@@ -105,18 +105,18 @@ proxies:
       headers:
         Host: sg-datacamp001.arenato.rest
     udp: true
-  - name: Uninet 🇮🇩
+  - name: IKD 🇮🇩
     server: quiz.int.vidio.com
     port: 443
     type: trojan
     password: Oke020389
     skip-cert-verify: true
-    sni: id-uninet001.beritanect.click
+    sni: id-ikd001.kegiatanja.my.id
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: id-uninet001.beritanect.click
+        Host: id-ikd001.kegiatanja.my.id
     udp: true
   - name: datacamp domain 🇸🇬
     server: quiz.int.vidio.com
