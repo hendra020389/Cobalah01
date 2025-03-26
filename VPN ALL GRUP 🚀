@@ -138,12 +138,12 @@ proxies:
     type: trojan
     password: Oke020389
     skip-cert-verify: true
-    sni: Uninet.hendrasalsa.my.id
+    sni: IKD.hendrasalsa.my.id
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: Uninet.hendrasalsa.my.id
+        Host: IKD.hendrasalsa.my.id
     udp: true
   - name: datacamp wildcard 🇸🇬
     server: quiz.int.vidio.com
