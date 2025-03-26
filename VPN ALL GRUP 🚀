@@ -79,7 +79,7 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.Sg01.hendrasalsa.my.id
     udp: true
-  - name: Uninet wildcard 🇮🇩
+  - name: IKD wildcard 🇮🇩
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -131,7 +131,7 @@ proxies:
       headers:
         Host: datacamp.hendrasalsa.my.id
     udp: true
-  - name: Uninet domain 🇮🇩
+  - name: IKD domain 🇮🇩
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -161,9 +161,9 @@ proxy-groups:
   - name: VPN SERVER 🌐
     type: select
     proxies:
-      - Uninet domain 🇮🇩
-      - Uninet wildcard 🇮🇩
-      - Uninet 🇮🇩
+      - IKD domain 🇮🇩
+      - IKD wildcard 🇮🇩
+      - IKD 🇮🇩
       - Amazon 🇸🇬
       - Amazon domain 🇸🇬
       - Amazon wildcard 🇸🇬
@@ -179,9 +179,9 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - Uninet domain 🇮🇩
-      - Uninet wildcard 🇮🇩
-      - Uninet 🇮🇩
+      - IKD domain 🇮🇩
+      - IKD wildcard 🇮🇩
+      - IKD 🇮🇩
       - Amazon 🇸🇬
       - Amazon domain 🇸🇬
       - Amazon wildcard 🇸🇬
@@ -194,9 +194,9 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - Uninet domain 🇮🇩
-      - Uninet wildcard 🇮🇩
-      - Uninet 🇮🇩
+      - IKD domain 🇮🇩
+      - IKD wildcard 🇮🇩
+      - IKD 🇮🇩
       - Amazon 🇸🇬
       - Amazon domain 🇸🇬
       - Amazon wildcard 🇸🇬
@@ -209,9 +209,9 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - Uninet domain 🇮🇩
-      - Uninet wildcard 🇮🇩
-      - Uninet 🇮🇩
+      - IKD domain 🇮🇩
+      - IKD wildcard 🇮🇩
+      - IKD 🇮🇩
       - Amazon 🇸🇬
       - Amazon domain 🇸🇬
       - Amazon wildcard 🇸🇬
