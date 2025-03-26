@@ -1,3 +1,4 @@
+port: 7890
 socks-port: 7891
 redir-port: 7892
 mixed-port: 7893
@@ -31,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: 🇸🇬 Amazon 
+  - name: Amazon 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -47,7 +48,7 @@ proxies:
       headers:
         Host: sg-aws001.arenato.rest
     udp: true
-  - name: 🇸🇬 Amazon domain
+  - name: Amazon domain 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -63,7 +64,7 @@ proxies:
       headers:
         Host: amazon.hendrasalsa.my.id
     udp: true
-  - name: 🇸🇬 Amazon wildcard
+  - name: Amazon wildcard 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -79,7 +80,7 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.Sg01.hendrasalsa.my.id
     udp: true
-  - name: 🇮🇩 Uninet wildcard
+  - name: IKD wildcard 🇮🇩
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -92,7 +93,7 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.idn01.hendrasalsa.my.id
     udp: true
-  - name: 🇸🇬 datacamp
+  - name: datacamp 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -105,20 +106,20 @@ proxies:
       headers:
         Host: sg-datacamp001.arenato.rest
     udp: true
-  - name: 🇮🇩 Uninet
+  - name: IKD 🇮🇩
     server: quiz.int.vidio.com
     port: 443
     type: trojan
     password: Oke020389
     skip-cert-verify: true
-    sni: id-uninet001.beritanect.click
+    sni: id-ikd001.kegiatanja.my.id
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: id-uninet001.beritanect.click
+        Host: id-ikd001.kegiatanja.my.id
     udp: true
-  - name: 🇸🇬 datacamp domain
+  - name: datacamp domain 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -131,20 +132,20 @@ proxies:
       headers:
         Host: datacamp.hendrasalsa.my.id
     udp: true
-  - name: 🇮🇩 Uninet domain
+  - name: IKD domain 🇮🇩
     server: quiz.int.vidio.com
     port: 443
     type: trojan
     password: Oke020389
     skip-cert-verify: true
-    sni: Uninet.hendrasalsa.my.id
+    sni: IKD.hendrasalsa.my.id
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: Uninet.hendrasalsa.my.id
+        Host: IKD.hendrasalsa.my.id
     udp: true
-  - name: 🇸🇬 datacamp wildcard
+  - name: datacamp wildcard 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -167,9 +168,9 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet domain
-      - 🇮🇩 Uninet wildcard
+      - 🇮🇩 IKD
+      - 🇮🇩 IKD domain
+      - 🇮🇩 IKD wildcard
       - 🇸🇬 Amazon
       - 🇸🇬 Amazon domain
       - 🇸🇬 Amazon wildcard
