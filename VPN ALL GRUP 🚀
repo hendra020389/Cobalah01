@@ -32,10 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  
-proxy-groups:
-  - name: VPN SERVER 🌐
-    type: sel- name: Amazon
+  - name: Amazon
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -160,7 +157,10 @@ proxy-groups:
       path: /trojan-go
       headers:
         Host: quiz.int.vidio.com.Sg02.hendrasalsa.my.id
-    udp: trueect
+    udp: true
+proxy-groups:
+  - name: VPN SERVER
+    type: select
     proxies:
       - IKD domain
       - IKD wildcard
@@ -171,11 +171,11 @@ proxy-groups:
       - Contabo
       - Contabo domain
       - Contabo wildcard
-      - FALLBACK ✈️
-      - BEST-PING 🚁
-      - LOAD-BALANCE 🛸
+      - FALLBACK
+      - BEST-PING
+      - LOAD-BALANCE
       - DIRECT
-  - name: FALLBACK ✈️
+  - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -189,7 +189,7 @@ proxy-groups:
       - Contabo
       - Contabo domain
       - Contabo wildcard
-  - name: BEST-PING 🚁
+  - name: BEST-PING
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -204,7 +204,7 @@ proxy-groups:
       - Contabo
       - Contabo domain
       - Contabo wildcard
-  - name: LOAD-BALANCE 🛸
+  - name: LOAD-BALANCE
     type: load-balance
     strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
@@ -229,4 +229,4 @@ rule-providers:
   
 rules:
   - RULE-SET,clash,REJECT
-  - MATCH,VPN SERVER 🌐
+  - MATCH,VPN SERVER
