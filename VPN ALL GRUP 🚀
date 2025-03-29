@@ -32,7 +32,10 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: Amazon 🇸🇬
+  
+proxy-groups:
+  - name: VPN SERVER 🌐
+    type: sel- name: Amazon
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -48,7 +51,7 @@ proxies:
       headers:
         Host: sg-aws001.arenato.rest
     udp: true
-  - name: Amazon domain 🇸🇬
+  - name: Amazon domain
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -64,7 +67,7 @@ proxies:
       headers:
         Host: amazon.hendrasalsa.my.id
     udp: true
-  - name: Amazon wildcard 🇸🇬
+  - name: Amazon wildcard
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -80,7 +83,7 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.Sg01.hendrasalsa.my.id
     udp: true
-  - name: IKD wildcard 🇮🇩
+  - name: IKD wildcard
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -93,20 +96,20 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.idn01.hendrasalsa.my.id
     udp: true
-  - name: datacamp 🇸🇬
+  - name: Contabo
     server: quiz.int.vidio.com
     port: 443
     type: trojan
     password: Mantap020389
     skip-cert-verify: true
-    sni: sg-datacamp001.arenato.rest
+    sni: sg-contabo001.arenato.rest
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: sg-datacamp001.arenato.rest
+        Host: sg-contabo001.arenato.rest
     udp: true
-  - name: IKD 🇮🇩
+  - name: IKD
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -119,20 +122,20 @@ proxies:
       headers:
         Host: id-ikd001.kegiatanja.my.id
     udp: true
-  - name: datacamp domain 🇸🇬
+  - name: Contabo domain
     server: quiz.int.vidio.com
     port: 443
     type: trojan
     password: Mantap020389
     skip-cert-verify: true
-    sni: datacamp.hendrasalsa.my.id
+    sni: Contabo.hendrasalsa.my.id
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: datacamp.hendrasalsa.my.id
+        Host: Contabo.hendrasalsa.my.id
     udp: true
-  - name: IKD domain 🇮🇩
+  - name: IKD domain
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -145,7 +148,7 @@ proxies:
       headers:
         Host: IKD.hendrasalsa.my.id
     udp: true
-  - name: datacamp wildcard 🇸🇬
+  - name: Contabo wildcard
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -157,20 +160,17 @@ proxies:
       path: /trojan-go
       headers:
         Host: quiz.int.vidio.com.Sg02.hendrasalsa.my.id
-    udp: true
-proxy-groups:
-  - name: VPN SERVER 🌐
-    type: select
+    udp: trueect
     proxies:
-      - IKD domain 🇮🇩
-      - IKD wildcard 🇮🇩
-      - IKD 🇮🇩
-      - Amazon 🇸🇬
-      - Amazon domain 🇸🇬
-      - Amazon wildcard 🇸🇬
-      - datacamp 🇸🇬
-      - datacamp domain 🇸🇬
-      - datacamp wildcard 🇸🇬
+      - IKD domain
+      - IKD wildcard
+      - IKD
+      - Amazon
+      - Amazon domain
+      - Amazon wildcard
+      - Contabo
+      - Contabo domain
+      - Contabo wildcard
       - FALLBACK ✈️
       - BEST-PING 🚁
       - LOAD-BALANCE 🛸
@@ -180,45 +180,45 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - IKD domain 🇮🇩
-      - IKD wildcard 🇮🇩
-      - IKD 🇮🇩
-      - Amazon 🇸🇬
-      - Amazon domain 🇸🇬
-      - Amazon wildcard 🇸🇬
-      - datacamp 🇸🇬
-      - datacamp domain 🇸🇬
-      - datacamp wildcard 🇸🇬
+      - IKD domain
+      - IKD wildcard
+      - IKD
+      - Amazon
+      - Amazon domain
+      - Amazon wildcard
+      - Contabo
+      - Contabo domain
+      - Contabo wildcard
   - name: BEST-PING 🚁
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - IKD domain 🇮🇩
-      - IKD wildcard 🇮🇩
-      - IKD 🇮🇩
-      - Amazon 🇸🇬
-      - Amazon domain 🇸🇬
-      - Amazon wildcard 🇸🇬
-      - datacamp 🇸🇬
-      - datacamp domain 🇸🇬
-      - datacamp wildcard 🇸🇬
+      - IKD domain
+      - IKD wildcard
+      - IKD
+      - Amazon
+      - Amazon domain
+      - Amazon wildcard
+      - Contabo
+      - Contabo domain
+      - Contabo wildcard
   - name: LOAD-BALANCE 🛸
     type: load-balance
     strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - IKD domain 🇮🇩
-      - IKD wildcard 🇮🇩
-      - IKD 🇮🇩
-      - Amazon 🇸🇬
-      - Amazon domain 🇸🇬
-      - Amazon wildcard 🇸🇬
-      - datacamp 🇸🇬
-      - datacamp domain 🇸🇬
-      - datacamp wildcard 🇸🇬
+      - IKD domain
+      - IKD wildcard
+      - IKD
+      - Amazon
+      - Amazon domain
+      - Amazon wildcard
+      - Contabo
+      - Contabo domain
+      - Contabo wildcard
 rule-providers:
   clash:
     type: http
