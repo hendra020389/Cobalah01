@@ -17,7 +17,7 @@ dns:
   nameserver:
     - https://cloudflare-dns.com/dns-query
 proxies:
-  - name: Amazon Trojan ðŸ‡¸ðŸ‡¬
+  - name: Amazon Trojan 🇸🇬 
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -30,7 +30,7 @@ proxies:
       headers:
         Host: sg-aws001.ayows.web.id
     udp: true
-  - name: Amazon vmess ðŸ‡¸ðŸ‡¬
+  - name: Amazon vmess 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -46,7 +46,7 @@ proxies:
       headers:
         Host: sg-aws001.ayows.web.id
     udp: true
-  - name: IKD ðŸ‡®ðŸ‡©
+  - name: IKD 🇮🇩
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -63,9 +63,9 @@ proxy-groups:
   - name: FASTSSH-SSHKIT-HOWDY
     type: select
     proxies:
-      - Amazon Trojan ðŸ‡¸ðŸ‡¬
-      - Amazon vmess ðŸ‡¸ðŸ‡¬
-      - IKD ðŸ‡®ðŸ‡©
+      - Amazon Trojan 🇸🇬
+      - Amazon vmess 🇸🇬
+      - IKD 🇮🇩
       - LOAD-BALANCE
       - DIRECT
   - name: LOAD-BALANCE
@@ -74,9 +74,9 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - Amazon Trojan ðŸ‡¸ðŸ‡¬
-      - Amazon vmess ðŸ‡¸ðŸ‡¬
-      - IKD ðŸ‡®ðŸ‡©
+      - Amazon Trojan 🇸🇬
+      - Amazon vmess 🇸🇬
+      - IKD 🇮🇩
 rule-providers:
   clash:
     type: http
