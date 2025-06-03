@@ -23,12 +23,12 @@ proxies:
     type: trojan
     password: Mantap020389
     skip-cert-verify: true
-    sni: sg-aws001.ayows.web.id
+    sni: sg-aws001.arenato.rest
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: sg-aws001.ayows.web.id
+        Host: sg-aws001.arenato.rest
     udp: true
   - name: Amazon vmess 🇸🇬
     server: quiz.int.vidio.com
@@ -39,12 +39,12 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: sg-aws001.ayows.web.id
+    servername: sg-aws001.arenato.rest
     network: ws
     ws-opts:
       path: /xrayvmess
       headers:
-        Host: sg-aws001.ayows.web.id
+        Host: sg-aws001.arenato.rest
     udp: true
   - name: IKD 🇮🇩
     server: quiz.int.vidio.com
@@ -52,12 +52,12 @@ proxies:
     type: trojan
     password: Oke020389
     skip-cert-verify: true
-    sni: id-ikd001.wsnet.web.id
+    sni: id-ikd001.kegiatanja.my.id
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: id-ikd001.wsnet.web.id
+        Host: id-ikd001.kegiatanja.my.id
     udp: true
 proxy-groups:
   - name: FASTSSH-SSHKIT-HOWDY
