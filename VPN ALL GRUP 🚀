@@ -30,7 +30,7 @@ proxies:
       headers:
         Host: sg-aws001.arenato.rest
     udp: true
-  - name: Amazon vmess 🇸🇬
+  - name: GSL vmess 🇸🇬
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -39,12 +39,12 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: sg-aws001.arenato.rest
+    servername: sg-gsl002.arenato.rest
     network: ws
     ws-opts:
       path: /xrayvmess
       headers:
-        Host: sg-aws001.arenato.rest
+        Host: sg-gsl002.arenato.rest
     udp: true
   - name: IKD 🇮🇩
     server: quiz.int.vidio.com
@@ -64,7 +64,7 @@ proxy-groups:
     type: select
     proxies:
       - Amazon Trojan 🇸🇬
-      - Amazon vmess 🇸🇬
+      - GSL vmess 🇸🇬
       - IKD 🇮🇩
       - LOAD-BALANCE
       - DIRECT
@@ -75,7 +75,7 @@ proxy-groups:
     interval: 300
     proxies:
       - Amazon Trojan 🇸🇬
-      - Amazon vmess 🇸🇬
+      - GSL vmess 🇸🇬
       - IKD 🇮🇩
 rule-providers:
   clash:
