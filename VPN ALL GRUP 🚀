@@ -1,36 +1,38 @@
-tproxy-port: 7893
-bind-address: "*"
-mode: rule
-allow-lan: true
-log-level: silent
-external-controller: 0.0.0.0:9090
-external-ui: yacd-gh-pages
-unified-delay: true
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
 ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
 dns:
   enable: true
   ipv6: false
-  listen: 0.0.0.0:1053
-  enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.0/8
-  use-hosts: true
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
   nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
     - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
 proxies:
-  - name: Amazon Trojan 🇸🇬 
-    server: quiz.int.vidio.com
-    port: 443
-    type: trojan
-    password: Mantap020389
-    skip-cert-verify: true
-    sni: sg-aws001.arenato.rest
-    network: ws
-    ws-opts:
-      path: /trojan-go
-      headers:
-        Host: sg-aws001.arenato.rest
-    udp: true
-  - name: GSL vmess 🇸🇬
+  - name: Melbicom vmess
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -39,51 +41,36 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: sg-gsl002.arenato.rest
+    servername: xra-sgmelbi001.arenato.rest
     network: ws
     ws-opts:
       path: /xrayvmess
       headers:
-        Host: sg-gsl002.arenato.rest
+        Host: xra-sgmelbi001.arenato.rest
     udp: true
-  - name: IKD 🇮🇩
+  - name: Melbicom Trojan
+    server: quiz.int.vidio.com
+    port: 443
+    type: trojan
+    password: Mantap020389
+    skip-cert-verify: true
+    sni: tro-sgmelbi001.arenato.rest
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: tro-sgmelbi001.arenato.rest
+    udp: true
+  - name: IKD
     server: quiz.int.vidio.com
     port: 443
     type: trojan
     password: Oke020389
     skip-cert-verify: true
-    sni: id-ikd001.kegiatanja.my.id
+    sni: id-ikd001.wsnet.web.id
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: id-ikd001.kegiatanja.my.id
+        Host: id-ikd001.wsnet.web.id
     udp: true
-proxy-groups:
-  - name: FASTSSH-SSHKIT-HOWDY
-    type: select
-    proxies:
-      - Amazon Trojan 🇸🇬
-      - GSL vmess 🇸🇬
-      - IKD 🇮🇩
-      - LOAD-BALANCE
-      - DIRECT
-  - name: LOAD-BALANCE
-    type: load-balance
-    strategy: consistent-hashing
-    url: http://hi.bonds.id/ping
-    interval: 300
-    proxies:
-      - Amazon Trojan 🇸🇬
-      - GSL vmess 🇸🇬
-      - IKD 🇮🇩
-rule-providers:
-  clash:
-    type: http
-    behavior: domain
-    url: https://howdy.id/download/rules/clash.txt
-    path: ./providers/rule-provider_clash.yaml
-    interval: 86400
-rules:
-  - RULE-SET,clash,REJECT
-  - MATCH,FASTSSH-SSHKIT-HOWDY
