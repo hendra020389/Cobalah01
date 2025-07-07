@@ -32,7 +32,20 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: Melbicom vmess
+  - name: Melbicom Trojan ðŸ‡¸ðŸ‡¬
+    server: quiz.int.vidio.com
+    port: 443
+    type: trojan
+    password: Mantap020389
+    skip-cert-verify: true
+    sni: tro-sgmelbi001.arenato.rest
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: tro-sgmelbi001.arenato.rest
+    udp: true
+  - name: Melbicom vmess ðŸ‡¸ðŸ‡¬
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -48,20 +61,7 @@ proxies:
       headers:
         Host: xra-sgmelbi001.arenato.rest
     udp: true
-  - name: Melbicom Trojan
-    server: quiz.int.vidio.com
-    port: 443
-    type: trojan
-    password: Mantap020389
-    skip-cert-verify: true
-    sni: tro-sgmelbi001.arenato.rest
-    network: ws
-    ws-opts:
-      path: /trojan-go
-      headers:
-        Host: tro-sgmelbi001.arenato.rest
-    udp: true
-  - name: IKD
+  - name: IKD ðŸ‡®ðŸ‡©
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -74,3 +74,13 @@ proxies:
       headers:
         Host: id-ikd001.wsnet.web.id
     udp: true
+proxy-groups:
+  - name: FASTSSH-SSHKIT-HOWDY
+    type: select
+    proxies:
+      - Melbicom Trojan ðŸ‡¸ðŸ‡¬
+      - Melbicom vmess ðŸ‡¸ðŸ‡¬
+      - IKD ðŸ‡®ðŸ‡©
+      - DIRECT
+rules:
+  - MATCH,FASTSSH-SSHKIT-HOWDY
