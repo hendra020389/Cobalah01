@@ -32,20 +32,20 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: Melbicom Trojan ðŸ‡¸ðŸ‡¬
+  - name: IKD
     server: quiz.int.vidio.com
     port: 443
     type: trojan
-    password: Mantap020389
+    password: Oke020389
     skip-cert-verify: true
-    sni: tro-sgmelbi001.arenato.rest
+    sni: id-ikd001.kegiatanja.my.id
     network: ws
     ws-opts:
       path: /trojan-go
       headers:
-        Host: tro-sgmelbi001.arenato.rest
+        Host: id-ikd001.kegiatanja.my.id
     udp: true
-  - name: Melbicom vmess ðŸ‡¸ðŸ‡¬
+  - name: VMess_Melbicom
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -61,26 +61,20 @@ proxies:
       headers:
         Host: xra-sgmelbi001.arenato.rest
     udp: true
-  - name: IKD ðŸ‡®ðŸ‡©
-    server: quiz.int.vidio.com
-    port: 443
-    type: trojan
-    password: Oke020389
-    skip-cert-verify: true
-    sni: id-ikd001.wsnet.web.id
-    network: ws
-    ws-opts:
-      path: /trojan-go
-      headers:
-        Host: id-ikd001.wsnet.web.id
-    udp: true
 proxy-groups:
-  - name: FASTSSH-SSHKIT-HOWDY
+  - name: VPN server
     type: select
     proxies:
-      - Melbicom Trojan ðŸ‡¸ðŸ‡¬
-      - Melbicom vmess ðŸ‡¸ðŸ‡¬
-      - IKD ðŸ‡®ðŸ‡©
+      - IKD
+      - VMess_Melbicom
+      - FALLBACK
       - DIRECT
+  - name: FALLBACK
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - IKD
+      - VMess_Melbicom
 rules:
-  - MATCH,FASTSSH-SSHKIT-HOWDY
+  - MATCH,VPN server
