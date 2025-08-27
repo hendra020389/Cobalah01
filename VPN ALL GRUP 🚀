@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: IKD
+  - name: IKD 01
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -45,7 +45,46 @@ proxies:
       headers:
         Host: id-ikd001.kegiatanja.my.id
     udp: true
-  - name: VMess_Melbicom
+  - name: IKD 02
+    server: quiz.vidio.com
+    port: 443
+    type: trojan
+    password: Oke020389
+    skip-cert-verify: true
+    sni: id-ikd001.kegiatanja.my.id
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: id-ikd001.kegiatanja.my.id
+    udp: true
+  - name: IKD 03
+    server: img.email3.vidio.com
+    port: 443
+    type: trojan
+    password: Oke020389
+    skip-cert-verify: true
+    sni: id-ikd001.kegiatanja.my.id
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: id-ikd001.kegiatanja.my.id
+    udp: true
+  - name: IKD 04
+    server: quiz.staging.vidio.com
+    port: 443
+    type: trojan
+    password: Oke020389
+    skip-cert-verify: true
+    sni: id-ikd001.kegiatanja.my.id
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: id-ikd001.kegiatanja.my.id
+    udp: true
+  - name: VMess_malbicom
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -65,16 +104,51 @@ proxy-groups:
   - name: VPN server
     type: select
     proxies:
-      - IKD
-      - VMess_Melbicom
+      - IKD 01
+      - IKD 02
+      - IKD 03
+      - IKD 04
+      - VMess_malbicom
+      - BEST-PING
       - FALLBACK
       - DIRECT
+  - name: BEST-PING
+    type: url-test
+    url: https://dns.google
+    interval: 60
+    tolerance: 50
+    proxies:
+      - IKD 01
+      - IKD 02
+      - IKD 03
+      - IKD 04
   - name: FALLBACK
     type: fallback
-    url: http://www.gstatic.com/generate_204
-    interval: 300
+    url: https://dns.google
+    interval: 60
     proxies:
-      - IKD
-      - VMess_Melbicom
+      - IKD 01
+      - VMess_malbicom 
+      
+proxy-server-nameserver:
+   - 104.22.4.240
+   - 104.22.5.240
+   - 104.17.105.89
+   - 104.17.103.89
+   - 104.17.106.89
+   - 104.16.230.163
+   - 104.17.70.206
+   - 104.17.71.206
+   - 104.16.231.163
+   - 104.16.232.163
+   - 13.225.4.107
+   - 172.67.5.14
+   - 112.215.203.246
+   - 112.215.203.247
+   - 112.215.203.248
+   - 112.215.203.254
+   - 112.215.198.248
+   - 112.215.198.254
+
 rules:
   - MATCH,VPN server
