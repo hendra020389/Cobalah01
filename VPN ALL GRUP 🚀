@@ -112,10 +112,12 @@ proxy-groups:
       - BEST-PING
       - FALLBACK
       - DIRECT
+    url: https://dns.google
+    interval: 10
   - name: BEST-PING
     type: url-test
     url: https://dns.google
-    interval: 60
+    interval: 10
     tolerance: 50
     proxies:
       - IKD 01
@@ -125,30 +127,10 @@ proxy-groups:
   - name: FALLBACK
     type: fallback
     url: https://dns.google
-    interval: 60
+    interval: 10
     proxies:
       - IKD 01
       - VMess_malbicom 
       
-proxy-server-nameserver:
-   - 104.22.4.240
-   - 104.22.5.240
-   - 104.17.105.89
-   - 104.17.103.89
-   - 104.17.106.89
-   - 104.16.230.163
-   - 104.17.70.206
-   - 104.17.71.206
-   - 104.16.231.163
-   - 104.16.232.163
-   - 13.225.4.107
-   - 172.67.5.14
-   - 112.215.203.246
-   - 112.215.203.247
-   - 112.215.203.248
-   - 112.215.203.254
-   - 112.215.198.248
-   - 112.215.198.254
-
 rules:
-  - MATCH,VPN server
+  - MATCH,VPN serverVPN server
