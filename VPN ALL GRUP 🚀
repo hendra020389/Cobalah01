@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: IKD 01
+  - name: ikd ðŸ‡®ðŸ‡©
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -45,46 +45,7 @@ proxies:
       headers:
         Host: id-ikd001.kegiatanja.my.id
     udp: true
-  - name: IKD 02
-    server: quiz.vidio.com
-    port: 443
-    type: trojan
-    password: Oke020389
-    skip-cert-verify: true
-    sni: id-ikd001.kegiatanja.my.id
-    network: ws
-    ws-opts:
-      path: /trojan-go
-      headers:
-        Host: id-ikd001.kegiatanja.my.id
-    udp: true
-  - name: IKD 03
-    server: img.email3.vidio.com
-    port: 443
-    type: trojan
-    password: Oke020389
-    skip-cert-verify: true
-    sni: id-ikd001.kegiatanja.my.id
-    network: ws
-    ws-opts:
-      path: /trojan-go
-      headers:
-        Host: id-ikd001.kegiatanja.my.id
-    udp: true
-  - name: IKD 04
-    server: quiz.staging.vidio.com
-    port: 443
-    type: trojan
-    password: Oke020389
-    skip-cert-verify: true
-    sni: id-ikd001.kegiatanja.my.id
-    network: ws
-    ws-opts:
-      path: /trojan-go
-      headers:
-        Host: id-ikd001.kegiatanja.my.id
-    udp: true
-  - name: VMess_malbicom
+  - name: malbecom ðŸ‡¸ðŸ‡¬
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -101,36 +62,39 @@ proxies:
         Host: xra-sgmelbi001.arenato.rest
     udp: true
 proxy-groups:
-  - name: VPN server
+  - name: VPN SERVER  
     type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     proxies:
-      - IKD 01
-      - IKD 02
-      - IKD 03
-      - IKD 04
-      - VMess_malbicom
+      - ikd ðŸ‡®ðŸ‡©
+      - malbecom ðŸ‡¸ðŸ‡¬
+      - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
       - DIRECT
-    url: https://dns.google
-    interval: 10
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 30
+    proxies:
+      - ikd ðŸ‡®ðŸ‡©
+      - malbecom ðŸ‡¸ðŸ‡¬
   - name: BEST-PING
     type: url-test
-    url: https://dns.google
-    interval: 10
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     tolerance: 50
     proxies:
-      - IKD 01
-      - IKD 02
-      - IKD 03
-      - IKD 04
+      - ikd ðŸ‡®ðŸ‡©
+      - malbecom ðŸ‡¸ðŸ‡¬
   - name: FALLBACK
     type: fallback
-    url: https://dns.google
-    interval: 10
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     proxies:
-      - IKD 01
-      - VMess_malbicom 
-      
+      - ikd ðŸ‡®ðŸ‡©
+      - malbecom ðŸ‡¸ðŸ‡¬
 rules:
-  - MATCH,VPN serverVPN server
+  - MATCH,VPN SERVER 
