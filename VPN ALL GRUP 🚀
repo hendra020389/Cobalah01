@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: ikd ðŸ‡®ðŸ‡©
+  - name: ikd
     server: quiz.int.vidio.com
     port: 443
     type: trojan
@@ -45,7 +45,7 @@ proxies:
       headers:
         Host: id-ikd001.kegiatanja.my.id
     udp: true
-  - name: malbecom ðŸ‡¸ðŸ‡¬
+  - name: malbecom
     server: quiz.int.vidio.com
     port: 443
     type: vmess
@@ -67,8 +67,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 30
     proxies:
-      - ikd ðŸ‡®ðŸ‡©
-      - malbecom ðŸ‡¸ðŸ‡¬
+      - ikd
+      - malbecom
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -79,22 +79,22 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 30
     proxies:
-      - ikd ðŸ‡®ðŸ‡©
-      - malbecom ðŸ‡¸ðŸ‡¬
+      - ikd
+      - malbecom
   - name: BEST-PING
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 30
     tolerance: 50
     proxies:
-      - ikd ðŸ‡®ðŸ‡©
-      - malbecom ðŸ‡¸ðŸ‡¬
+      - ikd
+      - malbecom
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 30
     proxies:
-      - ikd ðŸ‡®ðŸ‡©
-      - malbecom ðŸ‡¸ðŸ‡¬
+      - ikd
+      - malbecom
 rules:
   - MATCH,VPN SERVER 
