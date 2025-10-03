@@ -32,6 +32,19 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
+  - name: ikd wildcard
+    server: quiz.int.vidio.com
+    port: 443
+    type: trojan
+    password: Oke020389
+    skip-cert-verify: true
+    sni: quiz.int.vidio.com.id-ikd001.kegiatanja.my.id
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: quiz.int.vidio.com.id-ikd001.kegiatanja.my.id
+    udp: true
   - name: ikd
     server: quiz.int.vidio.com
     port: 443
@@ -44,6 +57,22 @@ proxies:
       path: /trojan-go
       headers:
         Host: id-ikd001.kegiatanja.my.id
+    udp: true
+  - name: malbecom wildcard
+    server: quiz.int.vidio.com
+    port: 443
+    type: vmess
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: quiz.int.vidio.com.xra-sgmelbi001.arenato.rest
+    network: ws
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: quiz.int.vidio.com.xra-sgmelbi001.arenato.rest
     udp: true
   - name: malbecom
     server: quiz.int.vidio.com
@@ -62,12 +91,12 @@ proxies:
         Host: xra-sgmelbi001.arenato.rest
     udp: true
 proxy-groups:
-  - name: VPN SERVER  
+  - name: FASTSSH-SSHKIT-HOWDY
     type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 30
     proxies:
+      - ikd wildcard
       - ikd
+      - malbecom wildcard
       - malbecom
       - LOAD-BALANCE
       - BEST-PING
@@ -76,25 +105,31 @@ proxy-groups:
   - name: LOAD-BALANCE
     type: load-balance
     strategy: consistent-hashing
-    url: http://www.gstatic.com/generate_204
-    interval: 30
+    url: http://hi.bonds.id/ping
+    interval: 300
     proxies:
+      - ikd wildcard
       - ikd
+      - malbecom wildcard
       - malbecom
   - name: BEST-PING
     type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 30
+    url: http://hi.bonds.id/ping
+    interval: 300
     tolerance: 50
     proxies:
+      - ikd wildcard
       - ikd
+      - malbecom wildcard
       - malbecom
   - name: FALLBACK
     type: fallback
-    url: http://www.gstatic.com/generate_204
-    interval: 30
+    url: http://hi.bonds.id/ping
+    interval: 300
     proxies:
+      - ikd wildcard
       - ikd
+      - malbecom wildcard
       - malbecom
 rules:
-  - MATCH,VPN SERVER 
+  - MATCH,FASTSSH-SSHKIT-HOWDY
