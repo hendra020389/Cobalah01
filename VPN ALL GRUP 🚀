@@ -1,65 +1,128 @@
-port: 7890
-socks-port: 7891
-redir-port: 7892
-mixed-port: 7893
-tproxy-port: 7895
-ipv6: false
+# port: 6550
+# socks-port: 6551
+# mixed-port: 6552
+redir-port: 9797
+tproxy-port: 9898
 mode: rule
-log-level: silent
 allow-lan: true
+bind-address: "*"
+log-level: warning
+unified-delay: true
+geodata-mode: false
+geodata-loader: memconservative
+ipv6: false
 external-controller: 0.0.0.0:9090
 secret: ""
-bind-address: "*"
-unified-delay: true
+external-ui: /data/adb/box/clash/dashboard
 profile:
   store-selected: true
+  store-fake-ip: false
+find-process-mode: off
+geox-url:
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/raw/release/geoip-lite.dat"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/raw/release/country-lite.mmdb"
+  geosite: "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+sniffer:
+  enable: false
+  force-dns-mapping: false
+  parse-pure-ip: false
+  override-destination: false
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+  sniffing: [tls, http]
+  port-whitelist: [80, 443]
 dns:
   enable: true
+  prefer-h3: false
   ipv6: false
-  enhanced-mode: redir-host
-  listen: 0.0.0.0:7874
-  nameserver:
-    - 8.8.8.8
-    - 1.0.0.1
-    - https://dns.google/dns-query
-  fallback:
-    - 1.1.1.1
-    - 8.8.4.4
-    - https://cloudflare-dns.com/dns-query
-    - 112.215.203.254
   default-nameserver:
     - 8.8.8.8
     - 1.1.1.1
+  listen: 0.0.0.0:1053
+  use-hosts: true
+  enhanced-mode: redir-host
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter:
+    - "*.lan"
+    - "*.ntp.*"
+  respect-rules: true
+  nameserver:
+    - 9.9.9.9
+    - 94.140.14.14
+    - 8.8.8.8
+    - 1.0.0.1
+  proxy-server-nameserver:
+    - 104.22.4.240
+    - 104.22.5.240
+    - 104.17.105.89
+    - 104.17.103.89
+    - 104.17.106.89
+    - 104.16.230.163
+    - 104.17.70.206
+    - 104.17.71.206
+    - 104.16.231.163
+    - 104.16.232.163
+    - 13.225.4.107
+    - 172.67.5.14
+    - 112.215.203.246
+    - 112.215.203.247
+    - 112.215.203.248
     - 112.215.203.254
+    - 112.215.198.248
+    - 112.215.198.254
+    - 2400:9800:2:2::245
+    - 2400:9800:2:2::246
+  # nameserver-policy:
+    # "geosite:category-ads-all": rcode://success
+    # "geosite:nameserver-policy":
+       # - 112.215.198.248
+       # - '[2404:c0:1000::a:0:1]'
+tun:
+  enable: false
+  mtu: 9000
+  device: tun9
+  stack: system
+  dns-hijack:
+    - any:53
+    - tcp://any:53
+  auto-route: true
+  strict-route: false
+  auto-detect-interface: true
+  include-android-user: [0, 10]
+  exclude-package: []
 proxies:
-  - name: ikd wildcard
-    server: quiz.int.vidio.com
+  - name: ikd tes bug 🇮🇩
+    server: api24-normal-alisg.tiktokv.com
     port: 443
     type: trojan
-    password: Oke020389
+    password: Kadaingat86
     skip-cert-verify: true
-    sni: quiz.int.vidio.com.id-ikd001.kegiatanja.my.id
     network: ws
-    ws-opts:
-      path: /trojan-go
-      headers:
-        Host: quiz.int.vidio.com.id-ikd001.kegiatanja.my.id
     udp: true
-  - name: ikd
-    server: quiz.int.vidio.com
-    port: 443
-    type: trojan
-    password: Oke020389
-    skip-cert-verify: true
     sni: id-ikd001.kegiatanja.my.id
-    network: ws
     ws-opts:
       path: /trojan-go
       headers:
         Host: id-ikd001.kegiatanja.my.id
+  - name: ikd edu 🇮🇩
+    server: www.udemy.com
+    port: 443
+    type: trojan
+    password: Kadaingat86
+    skip-cert-verify: true
+    network: ws
     udp: true
-  - name: malbecom wildcard
-    server: quiz.int.vidio.com
+    sni: www.udemy.com.id-ikd001.kegiatanja.my.id
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: www.udemy.com.id-ikd001.kegiatanja.my.id
+  - name: malbecom edu 🇸🇬
+    server: www.udemy.com
     port: 443
     type: vmess
     uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
@@ -67,15 +130,28 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: quiz.int.vidio.com.xra-sgmelbi001.arenato.rest
+    servername: www.udemy.com.xra-sgmelbi001.arenato.rest
     network: ws
+    udp: true
     ws-opts:
       path: /xrayvmess
       headers:
-        Host: quiz.int.vidio.com.xra-sgmelbi001.arenato.rest
+        Host: www.udemy.com.xra-sgmelbi001.arenato.rest
+  - name: ikd edu 2 🇮🇩
+    server: 104.17.3.81
+    port: 443
+    type: trojan
+    password: Kadaingat86
+    skip-cert-verify: true
+    network: ws
     udp: true
-  - name: malbecom
-    server: quiz.int.vidio.com
+    sni: id-ikd001.kegiatanja.my.id
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: id-ikd001.kegiatanja.my.id
+  - name: malbecom edu 2 🇸🇬
+    server: 104.17.3.81
     port: 443
     type: vmess
     uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
@@ -85,51 +161,233 @@ proxies:
     skip-cert-verify: true
     servername: xra-sgmelbi001.arenato.rest
     network: ws
+    udp: true
     ws-opts:
       path: /xrayvmess
       headers:
         Host: xra-sgmelbi001.arenato.rest
+  - name: ikd vision 🇮🇩
+    server: 104.18.225.52
+    port: 443
+    type: trojan
+    password: Kadaingat86
+    skip-cert-verify: true
+    network: ws
     udp: true
+    sni: id-ikd001.kegiatanja.my.id
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: id-ikd001.kegiatanja.my.id
+  - name: malbecom vision 🇸🇬
+    server: 104.18.225.52
+    port: 443
+    type: vmess
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: xra-sgmelbi001.arenato.rest
+    network: ws
+    udp: true
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: xra-sgmelbi001.arenato.rest
+  - name: ikd Spotify 🇮🇩
+    server: investors.spotify.com
+    port: 443
+    type: trojan
+    password: Kadaingat86
+    skip-cert-verify: true
+    network: ws
+    udp: true
+    sni: investors.spotify.com.id-ikd001.kegiatanja.my.id
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: investors.spotify.com.id-ikd001.kegiatanja.my.id
+  - name: malbecom Spotify 🇸🇬
+    server: investors.spotify.com
+    port: 443
+    type: vmess
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: investors.spotify.com.xra-sgmelbi001.arenato.rest
+    network: ws
+    udp: true
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: investors.spotify.com.xra-sgmelbi001.arenato.rest
+  - name: ikd WhatsApp 🇮🇩
+    server: 104.18.1.196
+    port: 443
+    type: trojan
+    password: Kadaingat86
+    skip-cert-verify: true
+    network: ws
+    udp: true
+    sni: id-ikd001.kegiatanja.my.id
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: id-ikd001.kegiatanja.my.id
+  - name: malbecom WhatsApp 🇸🇬
+    server: 104.18.1.196
+    port: 443
+    type: vmess
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: xra-sgmelbi001.arenato.rest
+    network: ws
+    udp: true
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: xra-sgmelbi001.arenato.rest
+  - name: ikd tiktok 🇮🇩
+    server: api24-normal.tiktokv.com
+    port: 443
+    type: trojan
+    password: Kadaingat86
+    skip-cert-verify: true
+    network: ws
+    udp: true
+    sni: api24-normal.tiktokv.com.id-ikd001.kegiatanja.my.id
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: api24-normal.tiktokv.com.id-ikd001.kegiatanja.my.id
+  - name: malbecom tiktok 🇸🇬
+    server: api24-normal.tiktokv.com
+    port: 443
+    type: vmess
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: xra-sgmelbi001.arenato.rest
+    network: ws
+    udp: true
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: xra-sgmelbi001.arenato.rest
+ 
 proxy-groups:
-  - name: FASTSSH-SSHKIT-HOWDY
-    type: select
-    proxies:
-      - ikd wildcard
-      - ikd
-      - malbecom wildcard
-      - malbecom
-      - LOAD-BALANCE
-      - BEST-PING
-      - FALLBACK
-      - DIRECT
-  - name: LOAD-BALANCE
-    type: load-balance
-    strategy: consistent-hashing
-    url: http://hi.bonds.id/ping
-    interval: 300
-    proxies:
-      - ikd wildcard
-      - ikd
-      - malbecom wildcard
-      - malbecom
-  - name: BEST-PING
-    type: url-test
-    url: http://hi.bonds.id/ping
-    interval: 300
-    tolerance: 50
-    proxies:
-      - ikd wildcard
-      - ikd
-      - malbecom wildcard
-      - malbecom
-  - name: FALLBACK
-    type: fallback
-    url: http://hi.bonds.id/ping
-    interval: 300
-    proxies:
-      - ikd wildcard
-      - ikd
-      - malbecom wildcard
-      - malbecom
+- name: match 🚀
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 60
+  proxies:
+    - urltest ↔️
+    - loadbalance 🔄
+    - fallback 🔝
+    - ikd tiktok 🇮🇩
+    - ikd WhatsApp 🇮🇩
+    - ikd edu 🇮🇩
+    - ikd edu 2 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd Spotify 🇮🇩
+    - malbecom tiktok 🇸🇬
+    - malbecom WhatsApp 🇸🇬
+    - malbecom edu 🇸🇬
+    - malbecom edu 2 🇸🇬
+    - malbecom vision 🇸🇬
+    - malbecom Spotify 🇸🇬
+    - ikd tes bug 🇮🇩
+    - DIRECT
+- name: fallback 🔝
+  type: fallback
+  url: http://www.gstatic.com/generate_204
+  interval: 60
+  proxies:
+    - ikd tiktok 🇮🇩
+    - ikd WhatsApp 🇮🇩
+    - ikd edu 🇮🇩
+    - ikd edu 2 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd Spotify 🇮🇩
+    - malbecom tiktok 🇸🇬
+    - malbecom WhatsApp 🇸🇬
+    - malbecom edu 🇸🇬
+    - malbecom edu 2 🇸🇬
+    - malbecom vision 🇸🇬
+    - malbecom Spotify 🇸🇬
+- name: AdsBLOCK
+  type: select
+  proxies:
+    - ikd tiktok 🇮🇩
+    - ikd WhatsApp 🇮🇩
+    - ikd edu 🇮🇩
+    - ikd edu 2 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd Spotify 🇮🇩
+    - malbecom tiktok 🇸🇬
+    - malbecom WhatsApp 🇸🇬
+    - malbecom edu 🇸🇬
+    - malbecom edu 2 🇸🇬
+    - malbecom vision 🇸🇬
+    - malbecom Spotify 🇸🇬
+    - REJECT
+- name: urltest ↔️
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 60
+  proxies:
+    - ikd tiktok 🇮🇩
+    - ikd WhatsApp 🇮🇩
+    - ikd edu 🇮🇩
+    - ikd edu 2 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd Spotify 🇮🇩
+    - malbecom tiktok 🇸🇬
+    - malbecom WhatsApp 🇸🇬
+    - malbecom edu 🇸🇬
+    - malbecom edu 2 🇸🇬
+    - malbecom vision 🇸🇬
+    - malbecom Spotify 🇸🇬
+- name: loadbalance 🔄
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+  interval: 60
+  # strategy: consistent-hashing # 可选 round-robin 和 sticky-sessions
+  proxies:
+    - ikd tiktok 🇮🇩
+    - ikd WhatsApp 🇮🇩
+    - ikd edu 🇮🇩
+    - ikd edu 2 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd Spotify 🇮🇩
+    - malbecom tiktok 🇸🇬
+    - malbecom WhatsApp 🇸🇬
+    - malbecom edu 🇸🇬
+    - malbecom edu 2 🇸🇬
+    - malbecom vision 🇸🇬
+    - malbecom Spotify 🇸🇬
+rule-providers:
+  rule_basicads:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml
+    path: ./providers/rule-provider_clash.yaml
+    interval: 86400
 rules:
-  - MATCH,FASTSSH-SSHKIT-HOWDY
+# - DOMAIN-SUFFIX,googlesyndication.com,match
+# - DOMAIN-SUFFIX,adtival.network,match
+# - IP-CIDR,127.0.0.1/32,REJECT,no-resolve
+# - IP-CIDR,28.0.0.1/8,REJECT,no-resolve
+# - IP-CIDR6,::1/128,REJECT,no-resolve
+# - GEOSITE,category-ads-all,REJECT
+# - AND,((NETWORK,udp),(GEOSITE,youtube)),REJECT
+   - RULE-SET,rule_basicads,AdsBLOCK
+   - MATCH,match 🚀
