@@ -95,49 +95,7 @@ tun:
   include-android-user: [0, 10]
   exclude-package: []
 proxies:
-  - name: ikd tes bug 🇮🇩
-    server: api24-normal-alisg.tiktokv.com
-    port: 443
-    type: trojan
-    password: Kadaingat86
-    skip-cert-verify: true
-    network: ws
-    udp: true
-    sni: id-ikd001.kegiatanja.my.id
-    ws-opts:
-      path: /trojan-go
-      headers:
-        Host: id-ikd001.kegiatanja.my.id
   - name: ikd edu 🇮🇩
-    server: www.udemy.com
-    port: 443
-    type: trojan
-    password: Kadaingat86
-    skip-cert-verify: true
-    network: ws
-    udp: true
-    sni: www.udemy.com.id-ikd001.kegiatanja.my.id
-    ws-opts:
-      path: /trojan-go
-      headers:
-        Host: www.udemy.com.id-ikd001.kegiatanja.my.id
-  - name: malbecom edu 🇸🇬
-    server: www.udemy.com
-    port: 443
-    type: vmess
-    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: www.udemy.com.xra-sgmelbi001.arenato.rest
-    network: ws
-    udp: true
-    ws-opts:
-      path: /xrayvmess
-      headers:
-        Host: www.udemy.com.xra-sgmelbi001.arenato.rest
-  - name: ikd edu 2 🇮🇩
     server: 104.17.3.81
     port: 443
     type: trojan
@@ -150,7 +108,7 @@ proxies:
       path: /trojan-go
       headers:
         Host: id-ikd001.kegiatanja.my.id
-  - name: malbecom edu 2 🇸🇬
+  - name: malbecom edu 🇸🇬
     server: 104.17.3.81
     port: 443
     type: vmess
@@ -282,6 +240,35 @@ proxies:
       path: /xrayvmess
       headers:
         Host: xra-sgmelbi001.arenato.rest
+  - name: ikd facebook 🇮🇩
+    server: investor.fb.com
+    port: 443
+    type: trojan
+    password: Kadaingat86
+    skip-cert-verify: true
+    network: ws
+    udp: true
+    sni: investor.fb.com.id-ikd001.kegiatanja.my.id
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: investor.fb.com.id-ikd001.kegiatanja.my.id
+  - name: malbecom facebook 🇸🇬
+    server: investor.fb.com
+    port: 443
+    type: vmess
+    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: xra-sgmelbi001.arenato.rest
+    network: ws
+    udp: true
+    ws-opts:
+      path: /xrayvmess
+      headers:
+        Host: xra-sgmelbi001.arenato.rest
  
 proxy-groups:
 - name: match 🚀
@@ -292,88 +279,87 @@ proxy-groups:
     - urltest ↔️
     - loadbalance 🔄
     - fallback 🔝
+    - ikd Spotify 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd facebook 🇮🇩
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
-    - ikd edu 2 🇮🇩
-    - ikd vision 🇮🇩
-    - ikd Spotify 🇮🇩
+    - malbecom Spotify 🇸🇬
+    - malbecom vision 🇸🇬
+    - malbecom facebook 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
-    - malbecom edu 2 🇸🇬
-    - malbecom vision 🇸🇬
-    - malbecom Spotify 🇸🇬
-    - ikd tes bug 🇮🇩
     - DIRECT
 - name: fallback 🔝
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 60
   proxies:
+    - ikd Spotify 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd facebook 🇮🇩
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
-    - ikd edu 2 🇮🇩
-    - ikd vision 🇮🇩
-    - ikd Spotify 🇮🇩
+    - malbecom Spotify 🇸🇬
+    - malbecom vision 🇸🇬
+    - malbecom facebook 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
-    - malbecom edu 2 🇸🇬
-    - malbecom vision 🇸🇬
-    - malbecom Spotify 🇸🇬
 - name: AdsBLOCK
   type: select
   proxies:
+    - ikd Spotify 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd facebook 🇮🇩
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
-    - ikd edu 2 🇮🇩
-    - ikd vision 🇮🇩
-    - ikd Spotify 🇮🇩
+    - malbecom Spotify 🇸🇬
+    - malbecom vision 🇸🇬
+    - malbecom facebook 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
-    - malbecom edu 2 🇸🇬
-    - malbecom vision 🇸🇬
-    - malbecom Spotify 🇸🇬
     - REJECT
 - name: urltest ↔️
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 60
   proxies:
+    - ikd Spotify 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd facebook 🇮🇩
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
-    - ikd edu 2 🇮🇩
-    - ikd vision 🇮🇩
-    - ikd Spotify 🇮🇩
+    - malbecom Spotify 🇸🇬
+    - malbecom vision 🇸🇬
+    - malbecom facebook 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
-    - malbecom edu 2 🇸🇬
-    - malbecom vision 🇸🇬
-    - malbecom Spotify 🇸🇬
 - name: loadbalance 🔄
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 60
   # strategy: consistent-hashing # 可选 round-robin 和 sticky-sessions
   proxies:
+    - ikd Spotify 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd facebook 🇮🇩
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
-    - ikd edu 2 🇮🇩
-    - ikd vision 🇮🇩
-    - ikd Spotify 🇮🇩
+    - malbecom Spotify 🇸🇬
+    - malbecom vision 🇸🇬
+    - malbecom facebook 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
-    - malbecom edu 2 🇸🇬
-    - malbecom vision 🇸🇬
-    - malbecom Spotify 🇸🇬
 rule-providers:
   rule_basicads:
     type: http
