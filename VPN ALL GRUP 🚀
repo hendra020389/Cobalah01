@@ -240,35 +240,7 @@ proxies:
       path: /xrayvmess
       headers:
         Host: xra-sgmelbi001.arenato.rest
-  - name: ikd facebook 🇮🇩
-    server: investor.fb.com
-    port: 443
-    type: trojan
-    password: Kadaingat86
-    skip-cert-verify: true
-    network: ws
-    udp: true
-    sni: investor.fb.com.id-ikd001.kegiatanja.my.id
-    ws-opts:
-      path: /trojan-go
-      headers:
-        Host: investor.fb.com.id-ikd001.kegiatanja.my.id
-  - name: malbecom facebook 🇸🇬
-    server: investor.fb.com
-    port: 443
-    type: vmess
-    uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: xra-sgmelbi001.arenato.rest
-    network: ws
-    udp: true
-    ws-opts:
-      path: /xrayvmess
-      headers:
-        Host: xra-sgmelbi001.arenato.rest
+  
  
 proxy-groups:
 - name: match 🚀
@@ -281,13 +253,11 @@ proxy-groups:
     - fallback 🔝
     - ikd Spotify 🇮🇩
     - ikd vision 🇮🇩
-    - ikd facebook 🇮🇩
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
     - malbecom Spotify 🇸🇬
     - malbecom vision 🇸🇬
-    - malbecom facebook 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
@@ -299,13 +269,11 @@ proxy-groups:
   proxies:
     - ikd Spotify 🇮🇩
     - ikd vision 🇮🇩
-    - ikd facebook 🇮🇩
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
     - malbecom Spotify 🇸🇬
     - malbecom vision 🇸🇬
-    - malbecom facebook 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
@@ -314,13 +282,11 @@ proxy-groups:
   proxies:
     - ikd Spotify 🇮🇩
     - ikd vision 🇮🇩
-    - ikd facebook 🇮🇩
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
     - malbecom Spotify 🇸🇬
     - malbecom vision 🇸🇬
-    - malbecom facebook 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
@@ -332,13 +298,11 @@ proxy-groups:
   proxies:
     - ikd Spotify 🇮🇩
     - ikd vision 🇮🇩
-    - ikd facebook 🇮🇩
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
     - malbecom Spotify 🇸🇬
     - malbecom vision 🇸🇬
-    - malbecom facebook 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
@@ -350,13 +314,11 @@ proxy-groups:
   proxies:
     - ikd Spotify 🇮🇩
     - ikd vision 🇮🇩
-    - ikd facebook 🇮🇩
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
     - malbecom Spotify 🇸🇬
     - malbecom vision 🇸🇬
-    - malbecom facebook 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
