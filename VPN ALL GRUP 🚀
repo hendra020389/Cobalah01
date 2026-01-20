@@ -95,6 +95,19 @@ tun:
   include-android-user: [0, 10]
   exclude-package: []
 proxies:
+  - name: ikd tes bug 🇮🇩
+    server: investor.fb.com
+    port: 443
+    type: trojan
+    password: Kadaingat86
+    skip-cert-verify: true
+    network: ws
+    udp: true
+    sni: investor.fb.com.id-ikd001.kegiatanja.my.id
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: investor.fb.com.id-ikd001.kegiatanja.my.id
   - name: ikd edu 🇮🇩
     server: 104.17.3.81
     port: 443
@@ -240,7 +253,6 @@ proxies:
       path: /xrayvmess
       headers:
         Host: xra-sgmelbi001.arenato.rest
-  
  
 proxy-groups:
 - name: match 🚀
@@ -248,21 +260,29 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 60
   proxies:
-    - urltest ↔️
-    - loadbalance 🔄
-    - fallback 🔝
-    - ikd Spotify 🇮🇩
-    - ikd vision 🇮🇩
-    - ikd tiktok 🇮🇩
-    - ikd WhatsApp 🇮🇩
-    - ikd edu 🇮🇩
-    - malbecom Spotify 🇸🇬
-    - malbecom vision 🇸🇬
-    - malbecom tiktok 🇸🇬
-    - malbecom WhatsApp 🇸🇬
-    - malbecom edu 🇸🇬
+    - best ping ↔️
+    - fallback tiktok 🔝
+    - fallback WhatsApp 🔝
+    - best ping malbecom ↔️
+    - best ping ikd ↔️
+    - ikd tes bug 🇮🇩
     - DIRECT
-- name: fallback 🔝
+- name: fallback tiktok 🔝
+  type: fallback
+  url: http://www.gstatic.com/generate_204
+  interval: 60
+  proxies:
+    - ikd Spotify 🇮🇩
+    - malbecom Spotify 🇸🇬
+    - ikd vision 🇮🇩
+    - malbecom vision 🇸🇬
+    - ikd tiktok 🇮🇩
+    - malbecom tiktok 🇸🇬
+    - ikd WhatsApp 🇮🇩
+    - malbecom WhatsApp 🇸🇬
+    - ikd edu 🇮🇩
+    - malbecom edu 🇸🇬
+- name: fallback WhatsApp 🔝
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 60
@@ -277,21 +297,32 @@ proxy-groups:
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
-- name: AdsBLOCK
-  type: select
+- name: best ping ↔️
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 60
   proxies:
-    - ikd Spotify 🇮🇩
-    - ikd vision 🇮🇩
-    - ikd tiktok 🇮🇩
-    - ikd WhatsApp 🇮🇩
-    - ikd edu 🇮🇩
     - malbecom Spotify 🇸🇬
     - malbecom vision 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
-    - REJECT
-- name: urltest ↔️
+    - ikd Spotify 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd tiktok 🇮🇩
+    - ikd WhatsApp 🇮🇩
+    - ikd edu 🇮🇩
+- name: best ping malbecom ↔️
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 60
+  proxies:
+    - malbecom Spotify 🇸🇬
+    - malbecom vision 🇸🇬
+    - malbecom tiktok 🇸🇬
+    - malbecom WhatsApp 🇸🇬
+    - malbecom edu 🇸🇬
+- name: best ping ikd ↔️
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 60
@@ -301,27 +332,34 @@ proxy-groups:
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
+- name: AdsBLOCK
+  type: select
+  proxies:
     - malbecom Spotify 🇸🇬
     - malbecom vision 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
-- name: loadbalance 🔄
-  type: load-balance
-  url: http://www.gstatic.com/generate_204
-  interval: 60
-  # strategy: consistent-hashing # 可选 round-robin 和 sticky-sessions
-  proxies:
     - ikd Spotify 🇮🇩
     - ikd vision 🇮🇩
     - ikd tiktok 🇮🇩
     - ikd WhatsApp 🇮🇩
     - ikd edu 🇮🇩
+    - REJECT
+- name: WA
+  type: select
+  proxies:
     - malbecom Spotify 🇸🇬
     - malbecom vision 🇸🇬
     - malbecom tiktok 🇸🇬
     - malbecom WhatsApp 🇸🇬
     - malbecom edu 🇸🇬
+    - ikd Spotify 🇮🇩
+    - ikd vision 🇮🇩
+    - ikd tiktok 🇮🇩
+    - ikd WhatsApp 🇮🇩
+    - ikd edu 🇮🇩
+    - DIRECT
 rule-providers:
   rule_basicads:
     type: http
@@ -337,5 +375,12 @@ rules:
 # - IP-CIDR6,::1/128,REJECT,no-resolve
 # - GEOSITE,category-ads-all,REJECT
 # - AND,((NETWORK,udp),(GEOSITE,youtube)),REJECT
+   - DOMAIN-SUFFIX,static.whatsapp.net,WA
+   - DOMAIN-SUFFIX,docker.whatsapp.biz,WA
+   - DOMAIN-SUFFIX,whatsapp.com,WA
+   - DOMAIN-SUFFIX,whatsapp.net,WA
+   - DOMAIN-SUFFIX,g.whatsapp.net,WA
+   - DOMAIN-SUFFIX,v.whatsapp.net,WA
+   - DOMAIN-SUFFIX,mmg.whatsapp.net,WA
    - RULE-SET,rule_basicads,AdsBLOCK
    - MATCH,match 🚀
