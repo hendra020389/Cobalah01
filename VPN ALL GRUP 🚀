@@ -265,6 +265,10 @@ proxy-groups:
     - fallback WhatsApp 🔝
     - best ping malbecom ↔️
     - best ping ikd ↔️
+    - ikd tiktok 🇮🇩
+    - malbecom tiktok 🇸🇬
+    - ikd WhatsApp 🇮🇩
+    - malbecom WhatsApp 🇸🇬
     - ikd tes bug 🇮🇩
     - DIRECT
 - name: fallback tiktok 🔝
