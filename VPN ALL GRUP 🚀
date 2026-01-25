@@ -258,7 +258,7 @@ proxy-groups:
 - name: match 🚀
   type: select
   url: http://www.gstatic.com/generate_204
-  interval: 60
+  interval: 30
   proxies:
     - best ping ↔️
     - fallback tiktok 🔝
@@ -274,7 +274,7 @@ proxy-groups:
 - name: fallback tiktok 🔝
   type: fallback
   url: http://www.gstatic.com/generate_204
-  interval: 60
+  interval: 30
   proxies:
     - ikd Spotify 🇮🇩
     - malbecom Spotify 🇸🇬
@@ -289,7 +289,7 @@ proxy-groups:
 - name: fallback WhatsApp 🔝
   type: fallback
   url: http://www.gstatic.com/generate_204
-  interval: 60
+  interval: 30
   proxies:
     - ikd Spotify 🇮🇩
     - ikd vision 🇮🇩
@@ -304,7 +304,7 @@ proxy-groups:
 - name: best ping ↔️
   type: url-test
   url: http://www.gstatic.com/generate_204
-  interval: 60
+  interval: 30
   proxies:
     - malbecom Spotify 🇸🇬
     - malbecom vision 🇸🇬
@@ -319,7 +319,7 @@ proxy-groups:
 - name: best ping malbecom ↔️
   type: url-test
   url: http://www.gstatic.com/generate_204
-  interval: 60
+  interval: 30
   proxies:
     - malbecom Spotify 🇸🇬
     - malbecom vision 🇸🇬
@@ -329,7 +329,7 @@ proxy-groups:
 - name: best ping ikd ↔️
   type: url-test
   url: http://www.gstatic.com/generate_204
-  interval: 60
+  interval: 30
   proxies:
     - ikd Spotify 🇮🇩
     - ikd vision 🇮🇩
