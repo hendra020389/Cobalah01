@@ -95,19 +95,6 @@ tun:
   include-android-user: [0, 10]
   exclude-package: []
 proxies:
-  - name: ikd tes bug 🇮🇩
-    server: investor.fb.com
-    port: 443
-    type: trojan
-    password: Kadaingat86
-    skip-cert-verify: true
-    network: ws
-    udp: true
-    sni: investor.fb.com.id-ikd001.kegiatanja.my.id
-    ws-opts:
-      path: /trojan-go
-      headers:
-        Host: investor.fb.com.id-ikd001.kegiatanja.my.id
   - name: ikd edu 🇮🇩
     server: 104.17.3.81
     port: 443
@@ -269,7 +256,6 @@ proxy-groups:
     - malbecom tiktok 🇸🇬
     - ikd WhatsApp 🇮🇩
     - malbecom WhatsApp 🇸🇬
-    - ikd tes bug 🇮🇩
     - DIRECT
 - name: fallback tiktok 🔝
   type: fallback
