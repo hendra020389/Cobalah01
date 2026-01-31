@@ -212,20 +212,20 @@ proxies:
       headers:
         Host: xra-sgmelbi001.arenato.rest
   - name: ikd tiktok 🇮🇩
-    server: api24-normal.tiktokv.com
+    server: api24-normal-alisg.tiktokv.com
     port: 443
     type: trojan
     password: Kadaingat86
     skip-cert-verify: true
     network: ws
     udp: true
-    sni: api24-normal.tiktokv.com.id-ikd001.kegiatanja.my.id
+    sni: id-ikd001.kegiatanja.my.id
     ws-opts:
       path: /trojan-go
       headers:
-        Host: api24-normal.tiktokv.com.id-ikd001.kegiatanja.my.id
+        Host: id-ikd001.kegiatanja.my.id
   - name: malbecom tiktok 🇸🇬
-    server: api24-normal.tiktokv.com
+    server: api24-normal-alisg.tiktokv.com
     port: 443
     type: vmess
     uuid: 0713421d-9de4-5c89-aa2b-ec39eb25de9b
